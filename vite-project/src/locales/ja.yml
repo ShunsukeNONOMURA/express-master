@@ -1,0 +1,16 @@
+case:
+  action: アクション
+  create: 作成
+  delete: 削除
+  search: 検索
+domain:
+  user:
+    id: ユーザID
+    name: ユーザ名
+    role: ユーザロール
+    creationDatetime: ユーザ作成時刻
+view:
+  home: ホーム
+  # userUserId: "ユーザページ %{userName}"
+  userUserId: '%{userName}'
+  notFound: 404 not found

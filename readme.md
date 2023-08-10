@@ -74,3 +74,16 @@ module.exports = {
 - 参考
     - [vite-plugin-pug](https://www.npmjs.com/package/vite-plugin-pug)
     - [eslint-plugin-vue-pug](https://github.com/rashfael/eslint-plugin-vue-pug)
+
+### vuetify導入
+```
+yarn add vuetify@^3.3.12 @mdi/font
+yarn add -D vite-plugin-vuetify
+yarn add -D sass
+yarn add webfontloader
+yarn add -D @types/webfontloader
+```
+
+- 参考
+    - [Get started with Vuetify 3 Manual steps](https://vuetifyjs.com/en/getting-started/installation/#manual-steps)
+    - [Vite+Vue3+Vuetify3+Expressのプロジェクトを1から作成する（ESLint、Prettier、Node.jsをPJに含めたモノレポ？構成）](https://qiita.com/yuta-katayama-23/items/a40775326914ee9ed89a#vuetify%E3%81%AE%E5%B0%8E%E5%85%A5)
