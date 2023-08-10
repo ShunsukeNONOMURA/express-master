@@ -1,0 +1,15 @@
+version: '3.9'  # docker-composeのバージョン選択
+services:
+  vite:  # サービス名
+    build:  # Dockerfileの設定
+      context: .  # Dockerfileを置いているディレクトリ
+      dockerfile: Dockerfile  # Dockerfileのファイル名
+    working_dir: /app  # 作業ディレクトリを指定
+    volumes:
+      # - ./tmp:/app:cached # 一時作業ディレクトリをマウント
+      - ./vite-project:/app:cached # 作成したプロジェクトをマウント
+    tty: true  # コンテナを正常終了するのを防ぐ
+    ports:
+      - '5173:5173'  # 公開用のポート指定。ホスト側:コンテナ側 vite
+      - '4173:4173'  # 公開用のポート指定。ホスト側:コンテナ側 vite preview
+    # command: yarn dev --host  # viteの開発環境実行コマンド
