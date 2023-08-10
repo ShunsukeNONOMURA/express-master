@@ -18,9 +18,9 @@ git clone https://github.com/ShunsukeNONOMURA/vite-master.git
     - prettier
 
 
-## 導入時メモ
+## 導入メモ
 ### create vite
-
+v1.22.19で載せられるものをひとまず前載せする。
 ```
 yarn create vite
 
@@ -40,3 +40,37 @@ Vue.js - The Progressive JavaScript Framework
 $ cd vite-project
 $ yarn install
 ```
+
+### pug導入
+yarnで導入
+```
+yarn add -D vite-plugin-pug eslint@8 eslint-plugin-vue eslint-plugin-vue-pug
+```
+
+`vite.config.js`に設定追記
+```
+// vite.config.(js|ts)
+import { defineConfig } from "vite"
+import pugPlugin from "vite-plugin-pug"
+
+const options = { pretty: true } // FIXME: pug pretty is deprecated!
+const locals = { name: "My Pug" }
+
+export default defineConfig({
+  plugins: [pugPlugin(options, locals)],
+})
+```
+
+`.eslintrc.cjs`に設定追記
+```
+module.exports = {
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:vue-pug/vue3-recommended'
+  ]
+}
+```
+
+- 参考
+    - [vite-plugin-pug](https://www.npmjs.com/package/vite-plugin-pug)
+    - [eslint-plugin-vue-pug](https://github.com/rashfael/eslint-plugin-vue-pug)
